@@ -25,7 +25,7 @@ SECRET_KEY = '4eb2bbeb-706d-4c4f-8a5f-1b1d36b5f929'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['facebooke.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
