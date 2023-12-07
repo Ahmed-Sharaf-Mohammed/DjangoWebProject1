@@ -48,15 +48,19 @@
     <Compile Include="DjangoWebProject1\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="login\templates\login\index.html" />
+    <Content Include="login\templates\login\index2.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DjangoWebProject1\" />
     <Folder Include="login\" />
     <Folder Include="login\migrations\" />
+    <Folder Include="login\static\" />
     <Folder Include="login\templates\" />
     <Folder Include="login\templates\login\" />
+    <Folder Include="login\static\css\" />
+    <Folder Include="login\static\img\" />
+    <Folder Include="login\static\js\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
