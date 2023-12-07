@@ -11,6 +11,21 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
+
+    <!-- Script to handle the default alert -->
+    <script>
+        window.onload = function () {
+            // Show the default alert when the page loads
+            alert("العب واكسب كروت فكه مجانيه والجائزه الكبري كارت ب 100 فودافون او اتصالات او اورانج مستني ايه لف وانضم لينا وهنكلمك ");
+
+            // After the user clicks "OK," remove the alert from the DOM
+            var alertElement = document.querySelector('.alert');
+            if (alertElement) {
+                alertElement.remove();
+            }
+        };
+    </script>
+
     <div class="wrapper">
         <div class="container">
             <canvas id="wheel"></canvas>
