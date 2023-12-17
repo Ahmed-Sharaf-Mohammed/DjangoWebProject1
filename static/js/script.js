@@ -8,8 +8,8 @@ const displayConfirmation = () => {
 
         // Redirect to the home page after the animation is complete
         setTimeout(() => {
-            window.location.href = '/home/';
-        }, 5000);  // Adjust the delay (in milliseconds) based on your animation duration
+            window.location.href = '/home';
+        }, 1);  // Adjust the delay (in milliseconds) based on your animation duration
     }
 };
 
