@@ -1,7 +1,6 @@
 ﻿from django.shortcuts import render, redirect
 from .models import Profile
 from django.http import JsonResponse
-import pyautogui
 
 # Create your views here.
 def home(request):

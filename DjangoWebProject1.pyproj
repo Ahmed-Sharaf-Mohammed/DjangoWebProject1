@@ -48,8 +48,10 @@
     <Compile Include="DjangoWebProject1\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="login\build_files.sh">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="login\templates\login\index2.html" />
-    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DjangoWebProject1\" />
