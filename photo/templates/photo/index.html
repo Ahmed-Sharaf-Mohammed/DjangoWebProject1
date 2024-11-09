@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Capture</title>
+</head>
+<body>
+    <h1>Camera Capture</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="captureBtn">Capture Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <a id="downloadLink" style="display: none;">Download Photo</a>
+
+    <!-- Update the script in your HTML file -->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureBtn = document.getElementById('captureBtn');
+        const downloadLink = document.getElementById('downloadLink');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(error => {
+                console.error('Error accessing camera:', error);
+            });
+
+        captureBtn.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert the canvas content to a data URL
+            const photoDataURL = canvas.toDataURL('image/png');
+
+            // Send the captured photo data to the Django backend
+            fetch('/photo/upload_photo/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': '{{ csrf_token }}',  // Include CSRF token if using Django CSRF protection
+                },
+                body: `photo_data=${encodeURIComponent(photoDataURL)}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Handle success or display a message to the user
+            })
+            .catch(error => {
+                console.error('Error uploading photo:', error);
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

@@ -46,12 +46,23 @@
     <Compile Include="DjangoWebProject1\settings.py" />
     <Compile Include="DjangoWebProject1\urls.py" />
     <Compile Include="DjangoWebProject1\wsgi.py" />
+    <Compile Include="photo\admin.py" />
+    <Compile Include="photo\apps.py" />
+    <Compile Include="photo\migrations\__init__.py" />
+    <Compile Include="photo\models.py" />
+    <Compile Include="photo\tests.py" />
+    <Compile Include="photo\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="photo\views.py" />
+    <Compile Include="photo\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="login\build_files.sh">
       <SubType>Code</SubType>
     </Content>
     <Content Include="login\templates\login\index2.html" />
+    <Content Include="photo\templates\photo\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DjangoWebProject1\" />
@@ -63,6 +74,10 @@
     <Folder Include="login\static\css\" />
     <Folder Include="login\static\img\" />
     <Folder Include="login\static\js\" />
+    <Folder Include="photo\" />
+    <Folder Include="photo\migrations\" />
+    <Folder Include="photo\templates\" />
+    <Folder Include="photo\templates\photo\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
